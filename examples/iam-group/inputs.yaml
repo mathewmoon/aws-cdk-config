@@ -1,0 +1,5 @@
+development:
+  GroupName: administrators
+  GroupUsers:
+    - bob@foo.com
+foo: "foo"
