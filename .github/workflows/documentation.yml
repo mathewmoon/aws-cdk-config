@@ -13,7 +13,7 @@ jobs:
       - uses: actions/setup-python@v3
       - name: Install dependencies
         run: |
-          pip install sphinx sphinx_rtd_theme myst_parser more-itertools
+          pip install sphinx sphinx_rtd_theme myst_parser more-itertools typeguard
       - name: Sphinx build
         run: |
           cd docs
@@ -26,3 +26,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: _build/
           force_orphan: true
+      - name: debug
+        run: |
+          find ./docs -type f
