@@ -55,7 +55,6 @@ class CdkConfig:
         namespace: str = "",
         inputs: List[Input] | List[dict] = [],
     ) -> None:
-
         self.__config: dict = config
         self.__is_parsed: bool = False
         self.__inputs: List = []
