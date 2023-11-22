@@ -18,7 +18,19 @@ jobs:
         run: |
           black --check --diff aws_cdk_config
 
+  validate-dependencies:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+      - name: Install dependencies
+        run: |
+          pip install poetry
+      - name: Check lock file
+        run: poetry check --lock
+
   pytest:
+    needs: validate-dependencies
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -32,15 +44,22 @@ jobs:
           poetry run pytest
 
   build:
+    needs:
+      - pytest
+      - lint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
       - name: Build and Upload
         uses: JRubics/poetry-publish@v1.17
         with:
           pypi_token: ${{secrets.PYPI_TOKEN}}
 
   gen-docs:
+    needs:
+      - pytest
+      - lint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
