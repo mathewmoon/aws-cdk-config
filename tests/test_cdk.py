@@ -17,7 +17,9 @@ class IamGroup(Stack):
     Creates an IAM Group, optionally adding existing users
     """
 
-    def __init__(self, scope: Construct, construct_id: str, config: CdkConfig, **kwargs) -> None:
+    def __init__(
+        self, scope: Construct, construct_id: str, config: CdkConfig, **kwargs
+    ) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
         group = iam.Group(self, config.GroupName.value)
@@ -45,10 +47,7 @@ def test_cdk():
             return True
         return False
 
-
-    config = CdkConfig(
-        config_file=cfg_path, namespace="cdk_inputs"
-    )
+    config = CdkConfig(values_file=cfg_path, namespace="cdk_inputs")
 
     config.add_input(
         name="GroupName",
@@ -67,9 +66,7 @@ def test_cdk():
     config.parse()
 
     IamGroup(
-        app,
-        "IamGroup",
-        config=config,
+        app, "IamGroup", config=config,
     )
 
     app.synth()

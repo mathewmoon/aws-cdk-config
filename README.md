@@ -58,7 +58,7 @@ def group_exists(name: str) -> bool:
     return False
 
 
-config = CdkConfig(config_file=inputs.yaml, namespace="development")
+config = CdkConfig(values_file=inputs.yaml, namespace="development")
 config.add_input(
     name="GroupName",
     type=str,
