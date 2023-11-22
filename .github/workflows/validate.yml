@@ -48,7 +48,6 @@ jobs:
           poetry run pytest
 
   test-build:
-    needs: validate-dependencies
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -56,7 +55,6 @@ jobs:
       - name: Install dependencies
         run: |
           pip install poetry
-          poetry install
       - name: Build
         run: poetry build
       - name: Install
