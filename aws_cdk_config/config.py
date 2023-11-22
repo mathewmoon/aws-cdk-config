@@ -37,11 +37,11 @@ except TypeError:
 
 class CdkConfig:
     """
-    Create a config of inputs. Values can be passed via `config_file` or `config` argument. The inputs themselves can be passed either as `inputs` or added after instantiation with `add_input()`
+    Create a config of inputs. Values can be passed via `values_file` or `config` argument. The inputs themselves can be passed either as `inputs` or added after instantiation with `add_input()`
 
-    :param config_file: Path to a config file to take values from
-    :param file_format: JSON or YAML, only used with `config_file`
-    :param config: Dict containing values to be passed to inputs. Can be used with, or instead of, a config file
+    :param values_file: Path to a config file to take values from
+    :param file_format: JSON or YAML, only used with `values_file`
+    :param values: Dict containing values to be passed as values to inputs. Can be used with, or instead of, a config file
     :param namespace: Parse values from a top level key
     :param inputs: Optional list of either `Input` or `dict`, that can be passed unpacked as arguments to `Input`. Removes the need to use `CdkConfig.add_input()`
     """
@@ -49,26 +49,26 @@ class CdkConfig:
     def __init__(
         self,
         *,
-        config_file: str | None = None,
+        values_file: str | None = None,
         file_format: str | None = None,
-        config: dict = {},
+        values: dict = {},
         namespace: str = "",
         inputs: List[Input] | List[dict] = [],
     ) -> None:
-        self.__config: dict = config
+        self.__values: dict = {}
         self.__is_parsed: bool = False
         self.__inputs: List = []
         self.__namespace: str = namespace
         self.__dict: dict = {}
 
-        if config_file:
+        if values_file:
             # Try to infer what type of file we're working with based on the exension if `file_format` wasn't passed
             if not file_format:
                 try:
-                    file_format = config_file.split(".")[-1]
+                    file_format = values_file.split(".")[-1]
                 except IndexError:
                     raise ConfigurationError(
-                        "kwarg `config_file`  must contain an appropriate extension or `config_format` kwarg must be used."
+                        "kwarg `values_file`  must contain an appropriate extension or `config_format` kwarg must be used."
                     )
 
             if file_format in ("yaml", "yml"):
@@ -80,16 +80,33 @@ class CdkConfig:
                     "Unknown configuration file format. Valid types are 'json' and 'yaml'"
                 )
 
-            with open(config_file, "r") as f:
-                # Load the file and merge into the config dict
-                loaded_config = self.__loader(f)
-                self.__config.update(loaded_config)
+            with open(values_file, "r") as f:
+                # Load the file and merge into the values dict
+                loaded_values = self.__loader(f)
+
+        else:
+            loaded_values = {namespace: {}} if namespace else {}
+
+        self.__set_values([loaded_values, values], namespace=namespace)
 
         for input in inputs:
             if not isinstance(input, Input):
                 input = Input(**input)
 
             self.__inputs.append(input)
+
+    def __set_values(self, values: List[dict], namespace: str | None = None) -> dict:
+        merged_values = {}
+        for item in values:
+            if not item:
+                continue
+            try:
+                item = item[namespace] if namespace else item
+                merged_values.update(item)
+            except KeyError as e:
+                raise NamespaceError(e)
+
+        self.__values = merged_values
 
     def get_namespace(self) -> str:
         """
@@ -156,18 +173,12 @@ class CdkConfig:
             return opts
 
     def __parse_config(self):
-        if self.__namespace:
-            try:
-                self.__config = self.__config[self.__namespace]
-            except KeyError:
-                raise NamespaceError(self.__namespace)
-
         for input in self.__inputs:
             opts = input._asdict()
 
             self.validate_input_name(input.name)
-            if input.name in self.__config:
-                opts["value"] = self.__parse_type(self.__config[input.name], input.type)
+            if input.name in self.__values:
+                opts["value"] = self.__parse_type(self.__values[input.name], input.type)
 
             input = Input(**opts)
 
@@ -185,17 +196,18 @@ class CdkConfig:
             self.__setattr__(input.name, input)
             self.__dict[input.name] = input
 
-    def items(self):
+    def items(self) -> dict.dict_items:
         """
         Returns `self.as_dict().items()` iterable
         """
         return self.__dict.items()
 
-    def values(self):
+    def keys(self) -> dict.dict_keys:
+        return self.__dict.keys()
+
+    def values(self) -> dict.dict_values:
         """
         Returns `self.as_dict().values()`
-
-        :returns: dict_values
         """
         return self.__dict.values()
 
@@ -212,8 +224,8 @@ class CdkConfig:
             raise AlreadyInitialized()
         return super().__setattr__(__name, __value)
 
-    def _values(self):
+    def _values(self) -> dict:
         """
-        Returns a dictionary containing each input's name as a key and `input.value` as the value
+        Returns a dictionary containing each value as name as a key and its passed value as the value
         """
-        return {k: v.value for k, v in self.__dict.items()}
+        return self.__values
