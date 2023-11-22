@@ -17,6 +17,8 @@ Benefits of using CdkConfig:
 * Guaranteed immutability of inputs after parsing
 
 
+### See the full code documentation [here](https://mathewmoon.github.io/aws-cdk-config/)
+
 ### Example:
 
 Config file inputs.yaml
