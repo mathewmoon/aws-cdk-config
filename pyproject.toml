@@ -2,17 +2,18 @@
 name = "aws-cdk-config"
 version = "0.1.0"
 description = ""
-authors = ["Mathew Moon <mmoon@quinovas.com>"]
+authors = ["Mathew Moon <me@mathewmoon.net>"]
 readme = "README.md"
 packages = [{include = "aws_cdk_config", from = "."}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
 pyyaml = "^6.0.1"
-typeguard = "^4.1.5"
+typeguard = "^2.13.3"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "7.4.3"
+aws-cdk-lib = "^2.110.1"
 
 [tool.pytest.ini_options]
 xfail_strict = true

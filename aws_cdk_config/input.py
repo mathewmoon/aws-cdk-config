@@ -8,6 +8,7 @@ class NoValue:
     """
     Provides a type that we can use for inputs without a value passed that won't conflict with `None`
     """
+
     pass
 
 
