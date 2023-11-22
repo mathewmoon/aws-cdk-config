@@ -1,4 +1,4 @@
-name: Validate
+name: Validate and Test Build
 
 on: [pull_request, workflow_dispatch]
 
