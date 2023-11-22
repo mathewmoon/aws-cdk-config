@@ -1,2 +1,6 @@
 test_yaml_config: "test_yaml_config"
 test_validator: 1
+cdk_inputs:
+  GroupName: nonexistant
+  GroupUsers:
+    - bob@foo.com

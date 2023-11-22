@@ -2,7 +2,7 @@ from os import path
 
 import pytest
 
-from aws_cdk_config.config import CdkConfig
+from aws_cdk_config import CdkConfig
 from aws_cdk_config.exceptions import AlreadyInitialized, InputValidationError
 
 
