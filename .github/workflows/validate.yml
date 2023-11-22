@@ -8,6 +8,7 @@ permissions:
 jobs:
   lint:
     runs-on: ubuntu-latest
+    environment: validation
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v3
@@ -20,6 +21,7 @@ jobs:
 
   validate-dependencies:
     runs-on: ubuntu-latest
+    environment: validation
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v3
@@ -32,6 +34,7 @@ jobs:
   pytest:
     needs: validate-dependencies
     runs-on: ubuntu-latest
+    environment: validation
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v3
@@ -49,6 +52,7 @@ jobs:
 
   test-build:
     runs-on: ubuntu-latest
+    environment: validation
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v3
