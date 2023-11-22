@@ -22,7 +22,7 @@ jobs:
           VERSION=$(toml get --toml-path pyproject.toml tool.poetry.version)
           echo $VERSION
           echo ${{github.ref_name}}
-          if [[ "v${VERSION}" != "${{github.ref_name}}"]]; then
+          if [[ "v${VERSION}" != "${{github.ref_name}}" ]]; then
             echo "Tag/version mismatch. Version in pyproject.toml is v${VERSION}. Tag is ${{github.ref_name}}"
             exit 1
           fi
