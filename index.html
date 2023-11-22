@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module contents &mdash; aws-cdk-config 0.1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=01f34227"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            aws-cdk-config
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Module contents</a></li>
+<li><a class="reference internal" href="#module-aws_cdk_config.config">aws_cdk_config.config module</a><ul>
+<li><a class="reference internal" href="#aws_cdk_config.config.CdkConfig"><code class="docutils literal notranslate"><span class="pre">CdkConfig</span></code></a><ul>
+<li><a class="reference internal" href="#aws_cdk_config.config.CdkConfig.add_input"><code class="docutils literal notranslate"><span class="pre">CdkConfig.add_input()</span></code></a></li>
+<li><a class="reference internal" href="#aws_cdk_config.config.CdkConfig.as_dict"><code class="docutils literal notranslate"><span class="pre">CdkConfig.as_dict()</span></code></a></li>
+<li><a class="reference internal" href="#aws_cdk_config.config.CdkConfig.get_namespace"><code class="docutils literal notranslate"><span class="pre">CdkConfig.get_namespace()</span></code></a></li>
+<li><a class="reference internal" href="#aws_cdk_config.config.CdkConfig.items"><code class="docutils literal notranslate"><span class="pre">CdkConfig.items()</span></code></a></li>
+<li><a class="reference internal" href="#aws_cdk_config.config.CdkConfig.parse"><code class="docutils literal notranslate"><span class="pre">CdkConfig.parse()</span></code></a></li>
+<li><a class="reference internal" href="#aws_cdk_config.config.CdkConfig.validate_input_name"><code class="docutils literal notranslate"><span class="pre">CdkConfig.validate_input_name()</span></code></a></li>
+<li><a class="reference internal" href="#aws_cdk_config.config.CdkConfig.values"><code class="docutils literal notranslate"><span class="pre">CdkConfig.values()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-aws_cdk_config.exceptions">aws_cdk_config.exceptions module</a><ul>
+<li><a class="reference internal" href="#aws_cdk_config.exceptions.AlreadyInitialized"><code class="docutils literal notranslate"><span class="pre">AlreadyInitialized</span></code></a></li>
+<li><a class="reference internal" href="#aws_cdk_config.exceptions.ConfigurationError"><code class="docutils literal notranslate"><span class="pre">ConfigurationError</span></code></a></li>
+<li><a class="reference internal" href="#aws_cdk_config.exceptions.InputError"><code class="docutils literal notranslate"><span class="pre">InputError</span></code></a></li>
+<li><a class="reference internal" href="#aws_cdk_config.exceptions.InputTypeError"><code class="docutils literal notranslate"><span class="pre">InputTypeError</span></code></a></li>
+<li><a class="reference internal" href="#aws_cdk_config.exceptions.InputValidationError"><code class="docutils literal notranslate"><span class="pre">InputValidationError</span></code></a></li>
+<li><a class="reference internal" href="#aws_cdk_config.exceptions.NamespaceError"><code class="docutils literal notranslate"><span class="pre">NamespaceError</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-aws_cdk_config.input">aws_cdk_config.input module</a><ul>
+<li><a class="reference internal" href="#aws_cdk_config.input.Input"><code class="docutils literal notranslate"><span class="pre">Input</span></code></a><ul>
+<li><a class="reference internal" href="#aws_cdk_config.input.Input.description"><code class="docutils literal notranslate"><span class="pre">Input.description</span></code></a></li>
+<li><a class="reference internal" href="#aws_cdk_config.input.Input.dict"><code class="docutils literal notranslate"><span class="pre">Input.dict</span></code></a></li>
+<li><a class="reference internal" href="#aws_cdk_config.input.Input.json"><code class="docutils literal notranslate"><span class="pre">Input.json</span></code></a></li>
+<li><a class="reference internal" href="#aws_cdk_config.input.Input.name"><code class="docutils literal notranslate"><span class="pre">Input.name</span></code></a></li>
+<li><a class="reference internal" href="#aws_cdk_config.input.Input.type"><code class="docutils literal notranslate"><span class="pre">Input.type</span></code></a></li>
+<li><a class="reference internal" href="#aws_cdk_config.input.Input.validator"><code class="docutils literal notranslate"><span class="pre">Input.validator</span></code></a></li>
+<li><a class="reference internal" href="#aws_cdk_config.input.Input.value"><code class="docutils literal notranslate"><span class="pre">Input.value</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#aws_cdk_config.input.NoValue"><code class="docutils literal notranslate"><span class="pre">NoValue</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">aws-cdk-config</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Module contents</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-aws_cdk_config">
+<span id="module-contents"></span><h1>Module contents<a class="headerlink" href="#module-aws_cdk_config" title="Link to this heading"></a></h1>
+</section>
+<section id="module-aws_cdk_config.config">
+<span id="aws-cdk-config-config-module"></span><h1>aws_cdk_config.config module<a class="headerlink" href="#module-aws_cdk_config.config" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="aws_cdk_config.config.CdkConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aws_cdk_config.config.</span></span><span class="sig-name descname"><span class="pre">CdkConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namespace</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#aws_cdk_config.input.Input" title="aws_cdk_config.input.Input"><span class="pre">Input</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aws_cdk_config.config.CdkConfig" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Create a config of inputs. Values can be passed via <cite>config_file</cite> or <cite>config</cite> argument. The inputs themselves can be passed either as <cite>inputs</cite> or added after instantiation with <cite>add_input()</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>config_file</strong> – Path to a config file to take values from</p></li>
+<li><p><strong>file_format</strong> – JSON or YAML, only used with <cite>config_file</cite></p></li>
+<li><p><strong>config</strong> – Dict containing values to be passed to inputs. Can be used with, or instead of, a config file</p></li>
+<li><p><strong>namespace</strong> – Parse values from a top level key</p></li>
+<li><p><strong>inputs</strong> – Optional list of either <cite>Input</cite> or <cite>dict</cite>, that can be passed unpacked as arguments to <cite>Input</cite>. Removes the need to use <cite>CdkConfig.add_input()</cite></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="aws_cdk_config.config.CdkConfig.add_input">
+<span class="sig-name descname"><span class="pre">add_input</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#aws_cdk_config.config.CdkConfig.add_input" title="Link to this definition"></a></dt>
+<dd><p>Adds inputs to self.__inputs so they are ready for self.parse(). Accepts the same inputs as the Inputs class</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aws_cdk_config.config.CdkConfig.as_dict">
+<span class="sig-name descname"><span class="pre">as_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#aws_cdk_config.config.CdkConfig.as_dict" title="Link to this definition"></a></dt>
+<dd><p>Return the config as a <cite>dict</cite> with the input’s name as the key and the full input as the value</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aws_cdk_config.config.CdkConfig.get_namespace">
+<span class="sig-name descname"><span class="pre">get_namespace</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#aws_cdk_config.config.CdkConfig.get_namespace" title="Link to this definition"></a></dt>
+<dd><p>Returns the namespace passed in initializer from which all input values are taken</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aws_cdk_config.config.CdkConfig.items">
+<span class="sig-name descname"><span class="pre">items</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aws_cdk_config.config.CdkConfig.items" title="Link to this definition"></a></dt>
+<dd><p>Returns <cite>self.as_dict().items()</cite> iterable</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aws_cdk_config.config.CdkConfig.parse">
+<span class="sig-name descname"><span class="pre">parse</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#aws_cdk_config.config.CdkConfig.parse" title="Link to this definition"></a></dt>
+<dd><p>Parse the config and make it immutable. If the config has already been parsed then <cite>AlreadyInitialized</cite> will be raised.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aws_cdk_config.config.CdkConfig.validate_input_name">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_input_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#aws_cdk_config.config.CdkConfig.validate_input_name" title="Link to this definition"></a></dt>
+<dd><p>Validates that input names are valid python identifiers. Will either return <cite>True</cite> or raise
+<cite>CdkConfig.exceptions.InputError</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p>CdkConfig.exceptions.InputError</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aws_cdk_config.config.CdkConfig.values">
+<span class="sig-name descname"><span class="pre">values</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aws_cdk_config.config.CdkConfig.values" title="Link to this definition"></a></dt>
+<dd><p>Returns <cite>self.as_dict().values()</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict_values</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-aws_cdk_config.exceptions">
+<span id="aws-cdk-config-exceptions-module"></span><h1>aws_cdk_config.exceptions module<a class="headerlink" href="#module-aws_cdk_config.exceptions" title="Link to this heading"></a></h1>
+<dl class="py exception">
+<dt class="sig sig-object py" id="aws_cdk_config.exceptions.AlreadyInitialized">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aws_cdk_config.exceptions.</span></span><span class="sig-name descname"><span class="pre">AlreadyInitialized</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Cannot</span> <span class="pre">add</span> <span class="pre">inputs</span> <span class="pre">after</span> <span class="pre">config</span> <span class="pre">is</span> <span class="pre">parsed.'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aws_cdk_config.exceptions.AlreadyInitialized" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aws_cdk_config.exceptions.InputError" title="aws_cdk_config.exceptions.InputError"><code class="xref py py-class docutils literal notranslate"><span class="pre">InputError</span></code></a></p>
+<p>Raised when calling <cite>CdkConfig.add_input()</cite> or <cite>CdkConfig.parse()</cite> after <cite>CdkConfig.parse()</cite> has already been called</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="aws_cdk_config.exceptions.ConfigurationError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aws_cdk_config.exceptions.</span></span><span class="sig-name descname"><span class="pre">ConfigurationError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Invalid</span> <span class="pre">config'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aws_cdk_config.exceptions.ConfigurationError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aws_cdk_config.exceptions.InputError" title="aws_cdk_config.exceptions.InputError"><code class="xref py py-class docutils literal notranslate"><span class="pre">InputError</span></code></a></p>
+<p>Raised when the config file cannot be parsed due to formatting</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="aws_cdk_config.exceptions.InputError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aws_cdk_config.exceptions.</span></span><span class="sig-name descname"><span class="pre">InputError</span></span><a class="headerlink" href="#aws_cdk_config.exceptions.InputError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="aws_cdk_config.exceptions.InputTypeError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aws_cdk_config.exceptions.</span></span><span class="sig-name descname"><span class="pre">InputTypeError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expected</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">got</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aws_cdk_config.exceptions.InputTypeError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aws_cdk_config.exceptions.InputError" title="aws_cdk_config.exceptions.InputError"><code class="xref py py-class docutils literal notranslate"><span class="pre">InputError</span></code></a></p>
+<p>Raised when an input’s value doesn’t match its declared type</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="aws_cdk_config.exceptions.InputValidationError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aws_cdk_config.exceptions.</span></span><span class="sig-name descname"><span class="pre">InputValidationError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aws_cdk_config.exceptions.InputValidationError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aws_cdk_config.exceptions.InputError" title="aws_cdk_config.exceptions.InputError"><code class="xref py py-class docutils literal notranslate"><span class="pre">InputError</span></code></a></p>
+<p>Raised when an input fails its own validator</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="aws_cdk_config.exceptions.NamespaceError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aws_cdk_config.exceptions.</span></span><span class="sig-name descname"><span class="pre">NamespaceError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">namespace</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aws_cdk_config.exceptions.NamespaceError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aws_cdk_config.exceptions.InputError" title="aws_cdk_config.exceptions.InputError"><code class="xref py py-class docutils literal notranslate"><span class="pre">InputError</span></code></a></p>
+<p>Raised when <cite>namespace</cite> is passed to <cite>CdkConfig</cite> but doesn’t exist in the config</p>
+</dd></dl>
+
+</section>
+<section id="module-aws_cdk_config.input">
+<span id="aws-cdk-config-input-module"></span><h1>aws_cdk_config.input module<a class="headerlink" href="#module-aws_cdk_config.input" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="aws_cdk_config.input.Input">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aws_cdk_config.input.</span></span><span class="sig-name descname"><span class="pre">Input</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type:</span> <span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value:</span> <span class="pre">~typing.Any</span> <span class="pre">=</span> <span class="pre">&lt;aws_cdk_config.input.NoValue</span> <span class="pre">object&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validator:</span> <span class="pre">~typing.Callable</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">Input.&lt;lambda&gt;&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aws_cdk_config.input.Input" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">NamedTuple</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – A valid identifier for the input. Inputs will be added to the CdkConfig object and accessed by their <cite>name</cite> attribute.
+The builtin str.isidentifier(name) must return True</p></li>
+<li><p><strong>type</strong> – This can be any python type. Inputs will be validated against their type here. Input values will
+also be cast to these types when the config is parsed. Since YAML and JSON don’t allow for
+complex types we will pass values that are sequences as <cite>*args</cite> and dicts as <cite>**kwargs</cite> to the
+class’s initializer</p></li>
+<li><p><strong>validator</strong> – Any callable accepts the value as the first and only argument and returns a boolean. If it returns False a validation error will be raised.</p></li>
+<li><p><strong>value</strong> – A default value</p></li>
+</ul>
+</dd>
+<dt class="field-even">Pamam description<span class="colon">:</span></dt>
+<dd class="field-even"><p>A description for the input. Also used in CdkConfig.print()</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aws_cdk_config.input.Input.description">
+<span class="sig-name descname"><span class="pre">description</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#aws_cdk_config.input.Input.description" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 3</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="aws_cdk_config.input.Input.dict">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dict</span></span><a class="headerlink" href="#aws_cdk_config.input.Input.dict" title="Link to this definition"></a></dt>
+<dd><p>Returns NamedTuple._asdict()</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="aws_cdk_config.input.Input.json">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">json</span></span><a class="headerlink" href="#aws_cdk_config.input.Input.json" title="Link to this definition"></a></dt>
+<dd><p>Deserializes complex objects and returns a JSON string</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aws_cdk_config.input.Input.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#aws_cdk_config.input.Input.name" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aws_cdk_config.input.Input.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">type</span></em><a class="headerlink" href="#aws_cdk_config.input.Input.type" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aws_cdk_config.input.Input.validator">
+<span class="sig-name descname"><span class="pre">validator</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Callable</span></em><a class="headerlink" href="#aws_cdk_config.input.Input.validator" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 4</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aws_cdk_config.input.Input.value">
+<span class="sig-name descname"><span class="pre">value</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Any</span></em><a class="headerlink" href="#aws_cdk_config.input.Input.value" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="aws_cdk_config.input.NoValue">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aws_cdk_config.input.</span></span><span class="sig-name descname"><span class="pre">NoValue</span></span><a class="headerlink" href="#aws_cdk_config.input.NoValue" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Provides a type that we can use for inputs without a value passed that won’t conflict with <cite>None</cite></p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mathew Moon &lt;me@mathewmoon.net&gt;.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
